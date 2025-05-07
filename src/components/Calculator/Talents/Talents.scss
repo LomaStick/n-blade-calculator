@@ -1,0 +1,270 @@
+.talents {
+	color: #FAFAFA;
+	display: flex;
+	flex-direction: column;
+
+	&__control-panel{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #2b2a2a83;
+		padding: 1rem;
+		border-radius: 6px;
+
+		.talents{
+			&__points{
+				font-size: 1rem;
+			}
+		}
+	}
+
+	
+	&__branches{
+		margin: 1rem 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	&__button_reset{
+		position: relative;
+		font-size: 0.75rem;
+		letter-spacing: 0.06rem;
+		
+		span{
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.4rem;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+	}
+}
+
+.talent-branch{
+	height: 100%;
+
+	&__container{
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	&__header{
+		position: relative;
+		min-width: 20vw;
+		img{
+			width: 98.7%;
+		}
+
+		&_wrapper{
+			position: absolute;
+			top:0;
+			left:0;
+			width: 100%;
+			height: 100%;
+			padding-top: 1.5%;
+			padding-bottom: 0.5%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 3%;
+
+			.tooltip{
+				margin-top: 1rem;
+				left: 50%;
+				translate: -50% ;
+			}
+		}
+		&-name{
+			font-size: 0.8rem;
+			font-weight: 600;
+			line-height: 1;
+			letter-spacing: 0.08rem;
+			color: #ebb473
+		}
+	}
+
+	&__button_info{
+		img{
+			padding: 25%;
+		}
+	}
+
+	&__background{
+		width: auto;
+		height: auto;
+		min-width: 20vw;
+	}
+
+	&__content{
+		position: absolute;
+		top: 6%;
+		left: 0;
+		padding: 0 4%;
+		width: 100%;
+		height: 73.9%;
+		display: flex;
+	}
+
+	// Левая панель (понель индикаторов уровня)
+	&__left-panel{
+		width: 14%;
+		margin-left: 3.9%;
+		padding: 6.7% 0 0 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+
+		.level-indicator {
+			&__list{
+				height: 87.5%;
+				width: 100%;
+				display: flex;
+				flex-direction: column-reverse;
+				align-items: center;
+				justify-content: space-between;
+			}
+			&__item{
+				&_Big{
+					width: 62%;
+				}
+				&_Small{
+					width: 40%;
+				}
+				&__level-up{
+					width: 100%;
+				}
+			}
+			&__level-up{
+				flex: 1;
+				margin-top: 16%;
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					width: 64%;
+				}
+			}
+		}
+	}
+
+	// правая панель (панель скиллов)
+	&__right-panel{
+		flex: 1;
+		.skill{
+			&__list{
+				height: 90%;
+				padding: 11% 11% 0 13%;
+				display: flex;
+				flex-direction: column-reverse;
+				justify-content: space-around;
+			}
+			&__item{
+				width: 100%;
+				display: flex;
+				gap: 5%;
+				.tooltip{
+					max-width: 200px;
+				}
+			}
+			&__icon{
+				min-width: 100%;
+			}
+			&__name{
+				width: 100%;
+				font-size: 0.7rem;
+				font-weight: 600;
+				letter-spacing: 0.04rem;
+				text-align: start;
+				color: #5a3d1e;
+			}
+			&__button{
+				position: relative;
+				.button{
+					&__overlay{
+						position: absolute;
+						top: 0;
+						left: 0;
+						&_status{
+							position: absolute;
+							bottom: 0;
+							right: 0;
+						}
+					}
+				}
+			}
+			&__points-counter{
+				pointer-events: none;
+				margin-top: 2%;
+				padding-right: 1px;;
+				font-size: 0.9rem;
+				position: absolute;
+				width: 100%;
+				line-height: 1rem;
+				left: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+
+	&__footer{
+		position: absolute;
+		bottom: 10%;
+		right: 10%;
+		height: 10%;
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+	}
+	// Общие стили тултипов
+	.tooltip {
+		letter-spacing: 0.05rem;
+		font-weight: 400;
+		&__title{
+			text-align: center;
+			font-size: 1rem ;
+			letter-spacing: 0.05rem;
+			margin-bottom: 0.5rem;
+			padding-bottom: 3% ;
+			color:#ebb473;
+			border-bottom: 1px solid rgba(235, 180, 115, 0.8);
+			border-image: linear-gradient(45deg, rgba(235, 180, 115, 0), rgba(235, 180, 115, 1), rgba(235, 180, 115, 0)) 1;
+		}
+		&__description{
+			margin-bottom: 0.5rem;
+		}
+		&__skill-status{
+			width: 100%;
+			display: inline-flex;
+			align-items: center;
+			justify-content: end;
+			gap: 0.1rem;
+			&_lock{
+				color: rgb(210, 1, 1);
+			}
+			&_open{
+				color: rgb(215, 215, 20);
+			}
+			&_accept{
+				color: rgb(0, 100, 0);
+			}
+		}
+	}
+}

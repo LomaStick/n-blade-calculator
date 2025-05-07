@@ -1,0 +1,38 @@
+.tooltip-container {
+  display: inline-block;
+  position: relative;
+	max-height: 100%;
+	max-width: 100%;
+  
+  &:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #5a3d1e;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: #f0e6d2;
+  pointer-events: none;
+  font-size: 0.75rem;
+
+  /* Размеры и видимость */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  
+  /* Гибкие размеры */
+  min-width: min-content;  // Минимальная ширина по содержимому
+  max-width: 250px;       // Максимальная ширина
+  width: max-content;     // Ширина по содержимому (но не более max-width)
+  
+  /* Перенос слов */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}

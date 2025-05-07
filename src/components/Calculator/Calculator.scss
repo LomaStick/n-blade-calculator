@@ -1,0 +1,79 @@
+.calculator {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0 auto;
+  padding: 2%;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+	overflow: hidden;
+  
+  /* Перенесённые стили фона */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  
+  &__header {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30%;
+  }
+	.class-selector{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		.class-button{
+			height: 48px;
+			width: 48px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			filter: brightness(80%) blur(0.04rem);
+			
+			&:hover{
+				filter: brightness(90%) blur(0);
+			}
+			&_active{
+				filter: none;
+				cursor: url('@assets/interface/arrow.png'), pointer;
+				&:hover{
+					filter: none
+				}
+			}
+			
+			&_filter-lock{
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 50%;
+				width: 49px;
+				height: 49px;
+			}
+			
+		}
+
+	}
+
+  &__content {
+    flex-grow: 1;
+    margin-top: 2rem;
+    border-radius: 5px;
+    overflow-y: auto;
+		overflow-x: hidden;
+    
+    // Скрываем скроллбар
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    -webkit-overflow-scrolling: touch;
+  }
+}
